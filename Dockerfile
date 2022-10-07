@@ -1,6 +1,6 @@
 FROM arm64v8/ubuntu:20.04
 
-RUN apt-get update
+RUN apt-get update && apt-get full-upgrade
 
 RUN DEBIAN_FRONTEND=noninteractive TZ=US/Central \
     apt-get -y install libgl-dev libvulkan-dev libpulse-dev libx11-dev libxft-dev \
