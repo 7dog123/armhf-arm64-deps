@@ -14,3 +14,5 @@ RUN apt-get update
 RUN apt-get -y install --download-only libgl-dev:armhf libvulkan-dev:armhf libpulse-dev:armhf libx11-dev:armhf libxft-dev:armhf \
     libxcursor-dev:armhf libxext-dev:armhf libxfixes-dev:armhf libxi-dev:armhf libxinerama-dev:armhf libxrandr-dev:armhf \
     libxxf86vm-dev:armhf libfreetype6-dev:armhf
+
+RUN ls /var/cache/apt/archives
