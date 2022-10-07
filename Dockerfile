@@ -8,7 +8,7 @@ RUN DEBIAN_FRONTEND=noninteractive TZ=US/Central \
     libxxf86vm-dev libfreetype6-dev
 
 RUN mkdir arm64 &&  mv /var/cache/apt/archives/*.deb arm64 && \
-    rm -rf /var/cache/apt/archives/*.deb && dpkg -i arm64/*.deb --instdir=/usr/local
+    rm -rf /var/cache/apt/archives/*.deb && dpkg -i arm64/*.deb --instdir=usr/local
 
 
 RUN dpkg --add-architecture armhf
@@ -20,5 +20,5 @@ RUN apt-get -y install --download-only libgl-dev:armhf libvulkan-dev:armhf libpu
     libxxf86vm-dev:armhf libfreetype6-dev:armhf
 
 RUN mkdir armhf &&  mv /var/cache/apt/archives/*.deb armhf && \
-    rm -rf /var/cache/apt/archives/*.deb && dpkg -i armhf/*.deb --instdir=/usr/local
+    rm -rf /var/cache/apt/archives/*.deb && dpkg -i armhf/*.deb --instdir=usr/local
 
