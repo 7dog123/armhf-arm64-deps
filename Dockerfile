@@ -7,8 +7,7 @@ RUN DEBIAN_FRONTEND=noninteractive TZ=US/Central \
     libxcursor-dev libxext-dev libxfixes-dev libxi-dev libxinerama-dev libxrandr-dev \
     libxxf86vm-dev libfreetype6-dev
 
-RUN mkdir -p /usr/local/arm64 && \
-    dpkg -i /var/cache/apt/archives/*.deb --instdir=/usr/local/arm64 && \
+RUN dpkg -i /var/cache/apt/archives/*.deb --instdir=/usr/local && \
     rm -rf /var/cache/apt/archives/*.deb
 
 
@@ -20,6 +19,5 @@ RUN apt-get -y install --download-only libgl-dev:armhf libvulkan-dev:armhf libpu
     libxcursor-dev:armhf libxext-dev:armhf libxfixes-dev:armhf libxi-dev:armhf libxinerama-dev:armhf libxrandr-dev:armhf \
     libxxf86vm-dev:armhf libfreetype6-dev:armhf
 
-RUN mkdir -p /usr/local/armhf && \
-    dpkg -i /var/cache/apt/archives/*.deb --instdir=/usr/local/armhf && \
+RUN dpkg -i /var/cache/apt/archives/*.deb --instdir=/usr/local && \
     rm -rf /var/cache/apt/archives/*.deb
