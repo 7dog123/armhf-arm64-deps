@@ -2,7 +2,8 @@ FROM arm64v8/ubuntu:20.04
 
 RUN apt-get update
 
-RUN apt-get -y install libgl-dev libvulkan-dev libpulse-dev libx11-dev libxft-dev \
+RUN DEBIAN_FRONTEND=noninteractive TZ=US/Central \
+    apt-get -y install libgl-dev libvulkan-dev libpulse-dev libx11-dev libxft-dev \
     libxcursor-dev libxext-dev libxfixes-dev libxi-dev libxinerama-dev libxrandr-dev \
     libxxf86vm-dev libfreetype6-dev
 
