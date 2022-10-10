@@ -16,8 +16,8 @@ jobs:
     - uses: actions/checkout@v3
 
     - run: |
-        ls /actions_job
-        #docker info
+        #ls /actions_job
+        docker build --help
         #cat /etc/docker/daemon.json
     - name: install deps for multi-arch
       run: |
