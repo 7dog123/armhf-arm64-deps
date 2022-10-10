@@ -15,7 +15,9 @@ jobs:
     steps:
     - uses: actions/checkout@v3
 
-    - run: cat /etc/docker/daemon.json
+    - run: |
+        docker info
+        #cat /etc/docker/daemon.json
     - name: install deps for multi-arch
       run: |
        sudo apt-get update -q -y
